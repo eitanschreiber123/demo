@@ -139,3 +139,82 @@ a.secondary {
     --button-secondary-border: #1a1a1a;
   }
 }
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  position: relative;
+}
+
+/* Desktop links */
+.links {
+  grid-column: 1;
+  justify-self: center;
+}
+
+/* Title centered */
+.title {
+  grid-column: 2;
+  justify-self: center;
+}
+
+/* Hamburger hidden by default */
+.hamburgerWrapper {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+.hamburger {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Dropdown menu */
+.mobileDropdown {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 6px;
+}
+
+.mobileDropdown a {
+  padding: 8px 12px;
+}
+
+/* ========================== */
+/* Mobile below 500px only */
+/* ========================== */
+.cat {
+  flex-direction: row;
+}
+@media (max-width: 500px) {
+
+  .header {
+    grid-template-columns: 1fr;
+  }
+
+  .links {
+    display: none;   /* Hide desktop links */
+  }
+
+  .hamburgerWrapper {
+    display: block;  /* Show hamburger */
+  }
+
+  .title {
+    grid-column: 1;
+    justify-self: center;
+  }
+  .cat {
+  flex-direction: column;
+}
+}
+
